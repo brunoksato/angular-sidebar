@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SidebarJS</title>
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" rel="stylesheet" />
+
+		<!-- Estilo para menu-->
+        <link rel="stylesheet" href="css/index.css" />
+
+		<!-- deixar menu oculto -->
+        <link rel="stylesheet" href="css/sidebar.css" />
+
+    </head>
+<body ng-app="app" ng-controller="TestCtrl">
+
+
+	<div class="wrapper jsc-sidebar-content jsc-sidebar-pulled">
+		<nav>
+			<a href="javascript:void(0)" class="link-menu jsc-sidebar-trigger">Menu</a>
+		</nav>
+	</div>
+
+	 <nav class="sidebar jsc-sidebar" sidebar="{triguer:'.jsc-sidebar-trigger', scrollbarDisplay:'true'}" data-sidebar-options="">
+        <ul class="sidebar-list">
+            <li><a href="./" class="current">SidebarJS</a></li>
+            <li><a href="http://github.com/makotot/sidebar/">View on Github</a></li>
+            <li><a href="http://github.com/makotot/sidebar/releases">Download</a></li>
+        </ul>
+    </nav>
+
+
+        <script src="js/lib/jquery.min.js"></script>
+        <script src="js/sidebar.js"></script>
+		<script src="js/lib/angular.min.js"></script>
+		<script src="js/angular-sidebar.js"></script>
+
+        <script>
+
+			 angular.module('app', ['angular-sidebar'])
+			      .controller('TestCtrl', TestCtrl);
+
+			 function TestCtrl( $scope ){
+
+			      $scope.title = 'Sidebar Angularjs';
+
+			 }
+
+			 TestCtrl.$inject = ['$scope'];
+
+
+        </script>
+</body>
+</html>
